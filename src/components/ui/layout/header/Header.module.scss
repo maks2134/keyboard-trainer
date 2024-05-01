@@ -1,0 +1,20 @@
+$orange: #FF824A;
+$text-color: #d1d0c5;
+
+
+.header{
+  img{
+    max-width: 40px;
+  }
+  &__body{
+  display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  &__promo{
+    margin-left: 10px;
+    color: $text-color;
+    font-size: 36px;
+  }
+}
