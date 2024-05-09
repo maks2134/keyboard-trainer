@@ -1,0 +1,17 @@
+$orange: #FF824A;
+$text-color: #d1d0c5;
+
+.KeyBoard{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+
+  &__section{
+    max-height: 400px;
+    border: none;
+    background: none;
+    font-size: 45px;
+    padding: 25px;
+
+  }
+}

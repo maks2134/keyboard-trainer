@@ -3,14 +3,13 @@ import { wordsArray } from "../../utils/wordsArray";
 import {GenerateResult} from "../../interfaces/GenerateResult.ts";
 
 
-export function useGenerate(): GenerateResult {
+export function useGenerate(limits:number): GenerateResult {
     const [randomWords, setRandomWords] = useState<string[]>([]);
-
     const generateRandomWords = (): void => {
         const randomIndexes: number[] = [];
         const randomWordsArray: string[] = [];
 
-        while (randomIndexes.length < 30) {
+        while (randomIndexes.length < limits) {
             const randomIndex = Math.floor(Math.random() * wordsArray.length);
 
             if (!randomIndexes.includes(randomIndex)) {
@@ -18,7 +17,6 @@ export function useGenerate(): GenerateResult {
                 randomWordsArray.push(wordsArray[randomIndex]);
             }
         }
-
         setRandomWords(randomWordsArray);
     };
 

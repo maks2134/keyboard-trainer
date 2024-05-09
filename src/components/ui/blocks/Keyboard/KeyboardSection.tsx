@@ -1,17 +1,28 @@
 import styles from './KeyboardSection.module.scss'
 import Container from "../../shared/Container/Container.tsx";
 import {useGenerate} from "../../../hooks/useGenerate.ts";
+import Keyboard from "./Keyboard.tsx";
+import {useEffect} from "react";
+
 
 export default function KeyboardSection() {
-    const {randomWords} = useGenerate();
+    const {randomWords,generateRandomWords} = useGenerate(30);
 
-    function print(): void {
-        console.log(randomWords);
+    function Generate():void{
+    generateRandomWords();
     }
+
+    useEffect(() => {
+        Generate();
+    }, []);
+
     return (
         <Container>
             <div className={styles.KeyBoard}>
-                <button onClick={print}>ЫФЗАЩЛЗЩФЫАЗЩФЫАЗщ</button>
+                <Keyboard words={randomWords} />
+                <div>
+                <button onClick={Generate}>Regenerate</button>
+                </div>
             </div>
         </Container>
     )

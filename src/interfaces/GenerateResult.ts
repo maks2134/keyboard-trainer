@@ -1,4 +1,4 @@
 export interface GenerateResult {
-    randomWords: string[];
+    randomWords: object;
     generateRandomWords: () => void;
 }
